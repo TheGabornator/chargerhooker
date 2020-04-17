@@ -30,7 +30,8 @@ const getTriggerTimeoutText = (calculatedTimeoutMillSec = 0) => {
     return `Watch out, something went wrong!`;
   }
   if (timeoutMin < 60) {
-    return `API call will be triggered in ${timeoutMin} minutes`;
+    // return `API call will be triggered in ${timeoutMin} minutes`;
+    return fooo;
   }
   return `API call will be triggered in an hour and ${timeoutMin % 60} minutes`;
 };
