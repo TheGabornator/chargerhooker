@@ -9,10 +9,4 @@ script:
     - docker run thegaborantor/chargerhooker npm run test -- --coverage
 
 notifications:
-    webhooks:
-        - $IFTT_ENDPOINT
-on_success: change # default: always
-on_failure: always # default: always
-on_start: change # default: never
-on_cancel: always # default: always
-on_error: always # default: always
+    webhooks: $IFTT_ENDPOINT
