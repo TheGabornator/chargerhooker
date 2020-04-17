@@ -5,7 +5,7 @@ services:
 before_install:
     - docker build -t thegaborantor/chargerhooker .
 
- script:
+script:
     - docker run thegaborantor/chargerhooker npm run test -- --coverage
 
 notifications:
