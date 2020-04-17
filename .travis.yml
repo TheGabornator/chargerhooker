@@ -11,6 +11,6 @@ script:
 notifications:
     webhooks:
         urls:
-            - https://maker.ifttt.com/trigger/travisci/with/key/$IFTTT_KEY
+            - "https://maker.ifttt.com/trigger/travisci/with/key/$IFTTT_KEY"
 
         on_failure: always # default: always
