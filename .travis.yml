@@ -11,7 +11,7 @@ script:
 notifications:
     webhooks:
         urls:
-            - $IFTT_ENDPOINT
+            - "$IFTT_ENDPOINT"
         on_success: change # default: always
         on_failure: always # default: always
         on_start: change # default: never
