@@ -17,21 +17,23 @@ const makeApiCall = () => {
 };
 
 const calculateTimeout = (batteryState = 100) => {
-  if (batteryState > 80) {
+  if (!batteryState || batteryState > 80) {
+    console.log("GABOR", 100 - batteryState - 10);
     return 0;
   }
   const chargeTimeInMinutes = 100 - batteryState - 10;
   return chargeTimeInMinutes * 60 * 1000;
 };
 
-const getTriggerTimeoutText = (calculatedTimeout = 0) => {
-  const timeoutInMinutest = calculatedTimeout / 1000 / 60;
-  if (timeoutInMinutest < 60) {
-    return `API call will be triggered in ${timeoutInMinutest} minutes`;
+const getTriggerTimeoutText = (calculatedTimeoutMillSec = 0) => {
+  const timeoutMin = Math.round(calculatedTimeoutMillSec / 1000 / 60) || 0;
+  if (!timeoutMin) {
+    return `Watch out, something went wrong!`;
   }
-  return `API call will be triggered in an hour and ${
-    timeoutInMinutest % 60
-  } minutes`;
+  if (timeoutMin < 60) {
+    return `API call will be triggered in ${timeoutMin} minutes`;
+  }
+  return `API call will be triggered in an hour and ${timeoutMin % 60} minutes`;
 };
 
 module.exports = {

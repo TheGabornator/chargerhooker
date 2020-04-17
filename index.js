@@ -20,7 +20,7 @@ app.post("/triggerHook", (req, res) => {
   const batteryState = (req.body && parseInt(req.body.batteryState)) || 100;
   const timeoutMillSec = calculateTimeout(batteryState);
 
-  if (batteryState >= 100) {
+  if (batteryState >= 80) {
     res.status(400).send("Something must have gone wrong!");
   } else {
     setTimeout(makeApiCall, timeoutMillSec);
