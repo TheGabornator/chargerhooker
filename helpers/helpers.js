@@ -18,7 +18,6 @@ const makeApiCall = () => {
 
 const calculateTimeout = (batteryState = 100) => {
   if (!batteryState || batteryState > 80) {
-    console.log("GABOR", 100 - batteryState - 10);
     return 0;
   }
   const chargeTimeInMinutes = 100 - batteryState - 10;
