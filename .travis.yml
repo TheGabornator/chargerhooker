@@ -14,3 +14,4 @@ notifications:
             - "https://maker.ifttt.com/trigger/travisci/with/key/$IFTTT_KEY"
 
         on_failure: always # default: always
+        on_error: always
