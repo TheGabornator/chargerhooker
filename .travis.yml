@@ -9,4 +9,4 @@ script:
     - docker run thegaborantor/chargerhooker npm run test -- --coverage
 
 notifications:
-    webhooks: "$IFTT_ENDPOINT"
+    webhooks: $IFTT_ENDPOINT
