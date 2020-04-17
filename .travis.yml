@@ -7,3 +7,10 @@ before_install:
 
  script:
     - docker run thegaborantor/chargerhooker npm run test -- --coverage
+
+notifications:
+    webhooks:
+        urls:
+        - https://maker.ifttt.com/trigger/travisci/with/key/$IFTTT_KEY;
+
+        on_failure: always # default: always
