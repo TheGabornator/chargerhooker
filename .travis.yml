@@ -9,4 +9,4 @@ script:
     - docker run thegaborantor/chargerhooker npm run test -- --coverage
 
 notifications:
-    webhooks: $IFTT_ENDPOINT
+    webhooks: https://939vfp3nqj.execute-api.eu-central-1.amazonaws.com/default/RedLightCall
