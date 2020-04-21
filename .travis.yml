@@ -11,8 +11,9 @@ script:
 notifications:
     webhooks:
         urls:
-            - https://rp5ogapldd.execute-api.eu-central-1.amazonaws.com/default/handleYellowLight
-        on_success: never # default:
-        on_failure: never # default:
-        on_start: always # default: never
-        on_cancel: never # default
+            - https://ofouzvbk01.execute-api.eu-central-1.amazonaws.com/default/handlePipelineState
+        on_success: always
+        on_failure: always
+        on_error: always
+        on_start: never
+        on_cancel: never
