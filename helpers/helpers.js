@@ -24,14 +24,14 @@ const calculateTimeout = (batteryState = 100) => {
   return chargeTimeInMinutes * 60 * 1000;
 };
 
+
 const getTriggerTimeoutText = (calculatedTimeoutMillSec = 0) => {
   const timeoutMin = Math.round(calculatedTimeoutMillSec / 1000 / 60) || 0;
   if (!timeoutMin) {
     return `Watch out, something went wrong!`;
   }
   if (timeoutMin < 60) {
-    // return `API call will be triggered in ${timeoutMin} minutes`;
-    return fooo;
+    return `API call will be triggered in ${timeoutMin} minutes`;
   }
   return `API call will be triggered in an hour and ${timeoutMin % 60} minutes`;
 };
